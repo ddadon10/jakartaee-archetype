@@ -127,11 +127,11 @@
           </systemProperties>
           <commandLineOptions>
             <option>
-              <key>--deploy</key>
-              <value>${project.build.directory}/${project.build.finalName}:/</value>
+              <key>--noCluster</key>
             </option>
             <option>
-              <key>--noCluster</key>
+              <key>--deploy</key>
+              <value>${project.build.directory}/${project.build.finalName}:/</value>
             </option>
           </commandLineOptions>
         </configuration>
