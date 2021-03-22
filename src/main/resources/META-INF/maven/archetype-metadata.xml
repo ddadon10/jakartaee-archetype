@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor
+  xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
+  name="jakartaee-archetype">
+
+  <requiredProperties>
+    <requiredProperty key="groupId"/>
+    <requiredProperty key="artifactId"/>
+    <requiredProperty key="gitignore"> <!-- https://stackoverflow.com/a/49052349/-->
+      <defaultValue>.gitignore</defaultValue>
+      <validationRegex>^\.gitignore$</validationRegex>
+    </requiredProperty>
+    <requiredProperty key="reload"> <!-- https://stackoverflow.com/a/49052349/-->
+      <defaultValue>.reload</defaultValue>
+      <validationRegex>^\.reload$</validationRegex>
+    </requiredProperty>
+  </requiredProperties>
+
+  <!-- Java files -->
+  <fileSets>
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
+      <directory>src/main/java</directory>
+      <includes>
+        <include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
+      <directory>src/test/java</directory>
+      <includes>
+        <include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <!-- Non Java files -->
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>src/main</directory>
+      <includes>
+        <include>**/*</include>
+      </includes>
+      <excludes>
+        <exclude>java/**</exclude>
+      </excludes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory/>
+      <includes>
+        <include>*</include>
+      </includes>
+      <excludes>
+        <exclude>src/**</exclude>
+        <exclude>pom.xml</exclude> <!-- Always included, exclude it to avoid double writing -->
+      </excludes>
+    </fileSet>
+  </fileSets>
+</archetype-descriptor>
