@@ -91,6 +91,7 @@
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
+          <failOnWarning>true</failOnWarning>
         </configuration>
       </plugin>
       <plugin>
@@ -133,6 +134,7 @@
           <execution>
             <goals>
               <goal>start</goal>
+              <goal>bundle</goal>
             </goals>
           </execution>
         </executions>
