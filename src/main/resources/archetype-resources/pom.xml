@@ -119,6 +119,10 @@
               <name>payaramicro.noCluster</name>
               <value>true</value>
             </property>
+            <property>
+              <name>payaramicro.rootDir</name>
+              <value>${user.home}/payaraRootDir</value>
+            </property>
           </systemProperties>
           <commandLineOptions>
             <option>
